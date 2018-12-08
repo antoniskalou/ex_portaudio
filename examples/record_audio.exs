@@ -3,7 +3,7 @@ defmodule PortAudio.Example.RecordAudio do
 
   def record_audio(filepath, duration \\ 10_000) do
     p = spawn(fn ->
-      {:ok, dev} = PortAudio.default_output_device()
+      {:ok, dev} = PortAudio.default_input_device()
       in_stream = Device.stream!(dev,
         input: %{channel_count: 2, sample_format: :int16},
         sample_rate: 44100.0

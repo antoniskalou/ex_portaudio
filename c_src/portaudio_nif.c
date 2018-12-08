@@ -318,7 +318,7 @@ static ERL_NIF_TERM portaudio_stream_open_nif(ErlNifEnv *env, int argc, const ER
                         res->output_sample_size * output_params->channelCount;
         } else {
                 res->output_sample_size = 0;
-                res->input_frame_size = 0;
+                res->output_frame_size = 0;
         }
 
         /* enif_release_resource(res); */
